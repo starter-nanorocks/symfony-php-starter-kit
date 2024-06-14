@@ -69,7 +69,7 @@ services:
       - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
     networks:
-      - elrnero
+      - starter-kit
 
   nginx:
     container_name: nginx
@@ -80,7 +80,7 @@ services:
       - ./symfony:/var/www/html/symfony
       - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     networks:
-      - elrnero
+      - starter-kit
 
   db:
     container_name: postgres
@@ -94,7 +94,7 @@ services:
     volumes:
       - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - elrnero
+      - starter-kit
     command: postgres -c 'max_connections=200'
 
   adminer:
@@ -108,7 +108,7 @@ services:
     ports:
       - '54320:8080'
     networks:
-      - elrnero
+      - starter-kit
 
   mailhog:
     container_name: mailhog
@@ -118,10 +118,10 @@ services:
       - 1025:1025
       - 8025:8025
     networks:
-      - elrnero
+      - starter-kit
 
 networks:
-  elrnero:
+  starter-kit:
     driver: bridge
 ```
 
