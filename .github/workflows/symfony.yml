@@ -36,9 +36,15 @@ jobs:
           extensions: mbstring, intl, pdo, pdo_pgsql
           coverage: none
 
-      - name: Install dependencies
+      - name: Install Composer dependencies
         working-directory: ./symfony
         run: composer install --prefer-dist --no-progress --no-suggest --ansi
+
+      - name: Install PHPCS
+        run: composer global require "squizlabs/php_codesniffer=*"
+
+      - name: Add Composer's global bin directory to PATH
+        run: echo "${{ runner.tool_cache }}/phpcs" >> $GITHUB_PATH
 
       - name: Wait for PostgreSQL
         run: sudo apt-get install -y postgresql-client && until pg_isready -h 127.0.0.1 -p 5432; do echo "Waiting for PostgreSQL..."; sleep 1; done
