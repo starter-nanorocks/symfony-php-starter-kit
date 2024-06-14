@@ -49,9 +49,9 @@ jobs:
       - name: Wait for PostgreSQL
         run: sudo apt-get install -y postgresql-client && until pg_isready -h 127.0.0.1 -p 5432; do echo "Waiting for PostgreSQL..."; sleep 1; done
 
-      - name: Run GrumPHP
+      - name: Run PHPCS on Symfony src folder
         working-directory: ./symfony
-        run: vendor/bin/grumphp run --no-interaction
+        run: vendor/bin/phpcs src --standard=PSR12 --ignore=vendor --no-cache --report=full --colors --severity=1
 
       - name: Run tests
         working-directory: ./symfony
