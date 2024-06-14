@@ -1,4 +1,24 @@
 # grumphp.yml
+parameters:
+    bin_dir: vendor/bin
+    git_dir: null
+    hooks_dir: null
+    hooks_preset: local
+    timeout: 60
+    process_async_limit: 10
+    process_async_wait: 0.1
+    ascii:
+        ascii_path: null
+        ascii_content: null
+    git_commit_message: "Please do not commit on the main branch."
+    hide_circumvention_tip: false
+    stop_on_failure: false
+    ignore_unstaged_changes: false
+    ignore_stash: false
+    ignore_merge_commits: false
+    ignore_unstaged_changes: false
+    ignore_untracked_files: false
+    no_interaction: true # Add this line to enable non-interactive mode
 grumphp:
     tasks:
         phpcs:
