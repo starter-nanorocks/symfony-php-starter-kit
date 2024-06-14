@@ -44,14 +44,14 @@ jobs:
         run: composer global require "squizlabs/php_codesniffer=*"
 
       - name: Add Composer's global bin directory to PATH
-        run: echo "${{ runner.tool_cache }}/phpcs" >> $GITHUB_PATH
+        run: echo "${{ github.home }}/.composer/vendor/bin" >> $GITHUB_PATH
 
       - name: Wait for PostgreSQL
         run: sudo apt-get install -y postgresql-client && until pg_isready -h 127.0.0.1 -p 5432; do echo "Waiting for PostgreSQL..."; sleep 1; done
 
       - name: Run PHPCS on Symfony src folder
         working-directory: ./symfony
-        run: vendor/bin/phpcs src --standard=PSR12 --ignore=vendor --no-cache --report=full --colors --severity=1
+        run: phpcs src --standard=PSR12 --ignore=vendor --no-cache --report=full --colors --severity=1
 
       - name: Run tests
         working-directory: ./symfony
