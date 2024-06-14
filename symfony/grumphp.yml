@@ -1,6 +1,9 @@
 # grumphp.yml
 grumphp:
     tasks:
+        phpcs:
+            standard:
+                - 'PSR12'
         phpstan:
             autoload_file: ~
             configuration: ~
