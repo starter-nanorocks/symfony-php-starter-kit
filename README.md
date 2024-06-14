@@ -9,6 +9,7 @@ This is a starter kit for Symfony 7.1 with the following technologies:
 - Adminer
 - PostgreSQL
 - MailHog
+- Xdebug
 
 ## Requirements
 
