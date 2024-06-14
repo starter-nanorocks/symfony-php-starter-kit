@@ -51,7 +51,7 @@ jobs:
 
       - name: Run GrumPHP
         working-directory: ./symfony
-        run: vendor/bin/grumphp run
+        run: vendor/bin/grumphp run --no-interaction
 
       - name: Run tests
         working-directory: ./symfony
