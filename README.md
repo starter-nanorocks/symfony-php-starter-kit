@@ -1,2 +1,3 @@
-# finki-elrnero
-The project repository for implementing Elrnero
+# Elrnero 
+
+Elrnero - Udemy base e-learning platform powered by Symfony PHP & react
