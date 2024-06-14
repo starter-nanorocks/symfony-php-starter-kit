@@ -196,6 +196,3 @@ DATABASE_URL=postgresql://symfony:symfony@postgres:5432/symfony
 ## License
 
 This project is licensed under the MIT License.
-```
-
-This setup ensures that GrumPHP will run PSR-12 code style checks and PHPStan analysis before each commit. Adjust any URLs, repository names, or other specifics to fit your project's setup.
